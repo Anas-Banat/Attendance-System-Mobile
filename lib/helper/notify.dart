@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:awesome_notifications/awesome_notifications.dart';
 
 class Notify {
@@ -10,8 +9,7 @@ class Notify {
    Future<bool> createNotification(
       {required String title, required String note, required int interval}) async {
     final AwesomeNotifications awesomeNotifications = AwesomeNotifications();
-    String localTimeZone =
-        await AwesomeNotifications().getLocalTimeZoneIdentifier();
+    String localTimeZone = await AwesomeNotifications().getLocalTimeZoneIdentifier();
 
     return awesomeNotifications.createNotification(
       schedule: NotificationInterval(interval: interval, timeZone: localTimeZone),
